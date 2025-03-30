@@ -114,6 +114,19 @@ public class Main {
         return isAllDigits(s, index + 1);
     }
 
+    /**
+     * This method computes the binomial coefficient C(n, k).
+     * It uses a recursive approach.
+     * Time complexity: O(2^n), due to repeated subproblems.
+     *
+     * @param n The total number of elements.
+     * @param k The number of selected elements.
+     * @return The binomial coefficient C(n, k).
+     */
+    public static int binomialCoefficient(int n, int k) {
+        if (k == 0 || k == n) return 1;
+        return binomialCoefficient(n - 1, k - 1) + binomialCoefficient(n - 1, k);
+    }
 
     public static void main(String[] args) {
         // Example calls for each function
@@ -127,5 +140,6 @@ public class Main {
         System.out.print("Reverse Array: ");
         printReverse(new int[]{1, 4, 6, 2}, 4);
         System.out.println("\nIs All Digits (123456): " + isAllDigits("123456", 0));
+        System.out.println("Binomial Coefficient C(7,3): " + binomialCoefficient(7, 3));
     }
 }
