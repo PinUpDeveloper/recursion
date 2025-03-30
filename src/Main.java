@@ -44,11 +44,28 @@ public class Main {
         return isPrime(n, divisor - 1);
     }
 
+    /**
+     * This method calculates the factorial of a given number.
+     * It uses a recursive approach.
+     * Time complexity: O(n), where n is the input number.
+     *
+     * @param n The number for which the factorial is to be calculated.
+     * @return The factorial of the given number.
+     */
+    public static int factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+
     public static void main(String[] args) {
         // Example calls for each function
         int[] arr = {10, 1, 32, 3, 45};
         System.out.println("Min: " + findMin(arr, arr.length));
         System.out.println("Average: " + findAverage(new int[]{3, 2, 4, 1}, 4));
         System.out.println("Is Prime (7): " + isPrime(7, 6));
+        System.out.println("Factorial (5): " + factorial(5));
     }
 }
