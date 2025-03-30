@@ -74,6 +74,19 @@ public class Main {
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
+    /**
+     * This method calculates a^n using recursion.
+     * Time complexity: O(n), since it makes n recursive calls.
+     *
+     * @param a The base number.
+     * @param n The exponent.
+     * @return The result of a^n.
+     */
+    public static int power(int a, int n) {
+        if (n == 0) return 1;
+        return a * power(a, n - 1);
+    }
+
     public static void main(String[] args) {
         // Example calls for each function
         int[] arr = {10, 1, 32, 3, 45};
@@ -82,5 +95,6 @@ public class Main {
         System.out.println("Is Prime (7): " + isPrime(7, 6));
         System.out.println("Factorial (5): " + factorial(5));
         System.out.println("Fibonacci (5): " + fibonacci(5));
+        System.out.println("Power (2^10): " + power(2, 10));
     }
 }
