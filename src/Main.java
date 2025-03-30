@@ -28,10 +28,27 @@ public class Main {
         return ((findAverage(arr, n - 1) * (n - 1)) + arr[n - 1]) / n;
     }
 
+    /**
+     * This method checks whether a number is prime.
+     * It uses a recursive approach.
+     * Time complexity: O(sqrt(n)), since we only check divisibility up to sqrt(n).
+     *
+     * @param n The number to check.
+     * @param divisor The current divisor.
+     * @return true if prime, false otherwise.
+     */
+    public static boolean isPrime(int n, int divisor) {
+        if (n < 2) return false;
+        if (divisor == 1) return true;
+        if (n % divisor == 0) return false;
+        return isPrime(n, divisor - 1);
+    }
+
     public static void main(String[] args) {
         // Example calls for each function
         int[] arr = {10, 1, 32, 3, 45};
         System.out.println("Min: " + findMin(arr, arr.length));
         System.out.println("Average: " + findAverage(new int[]{3, 2, 4, 1}, 4));
+        System.out.println("Is Prime (7): " + isPrime(7, 6));
     }
 }
