@@ -114,6 +114,7 @@ public class Main {
         return isAllDigits(s, index + 1);
     }
 
+
     public static void main(String[] args) {
         // Example calls for each function
         int[] arr = {10, 1, 32, 3, 45};
