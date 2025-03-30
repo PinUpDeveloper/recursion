@@ -128,6 +128,18 @@ public class Main {
         return binomialCoefficient(n - 1, k - 1) + binomialCoefficient(n - 1, k);
     }
 
+    /**
+     * This method finds the GCD of two numbers using recursion.
+     * Time complexity: O(log(min(a, b))), due to the Euclidean algorithm.
+     *
+     * @param a The first number.
+     * @param b The second number.
+     * @return The GCD of a and b.
+     */
+    public static int gcd(int a, int b) {
+        return (b == 0) ? a : gcd(b, a % b);
+    }
+
     public static void main(String[] args) {
         // Example calls for each function
         int[] arr = {10, 1, 32, 3, 45};
@@ -141,5 +153,6 @@ public class Main {
         printReverse(new int[]{1, 4, 6, 2}, 4);
         System.out.println("\nIs All Digits (123456): " + isAllDigits("123456", 0));
         System.out.println("Binomial Coefficient C(7,3): " + binomialCoefficient(7, 3));
+        System.out.println("GCD (32, 48): " + gcd(32, 48));
     }
 }
