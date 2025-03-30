@@ -1,5 +1,3 @@
-# Java Recursive Algorithms Project  
-
 ## 📌 Overview  
 
 This project implements multiple recursive algorithms in Java, covering tasks such as:  
