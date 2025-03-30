@@ -87,6 +87,19 @@ public class Main {
         return a * power(a, n - 1);
     }
 
+    /**
+     * This method prints an array in reverse order using recursion.
+     * Time complexity: O(n), where n is the number of elements.
+     *
+     * @param arr The input array.
+     * @param n The number of elements in the array.
+     */
+    public static void printReverse(int[] arr, int n) {
+        if (n == 0) return;
+        System.out.print(arr[n - 1] + " ");
+        printReverse(arr, n - 1);
+    }
+
     public static void main(String[] args) {
         // Example calls for each function
         int[] arr = {10, 1, 32, 3, 45};
@@ -96,5 +109,7 @@ public class Main {
         System.out.println("Factorial (5): " + factorial(5));
         System.out.println("Fibonacci (5): " + fibonacci(5));
         System.out.println("Power (2^10): " + power(2, 10));
+        System.out.print("Reverse Array: ");
+        printReverse(new int[]{1, 4, 6, 2}, 4);
     }
 }
