@@ -60,6 +60,20 @@ public class Main {
         }
     }
 
+    /**
+     * This method calculates the nth Fibonacci number.
+     * It uses a recursive approach.
+     * Time complexity: O(2^n), due to redundant calculations.
+     *
+     * @param n The position in the Fibonacci sequence.
+     * @return The nth Fibonacci number.
+     */
+    public static int fibonacci(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
     public static void main(String[] args) {
         // Example calls for each function
         int[] arr = {10, 1, 32, 3, 45};
@@ -67,5 +81,6 @@ public class Main {
         System.out.println("Average: " + findAverage(new int[]{3, 2, 4, 1}, 4));
         System.out.println("Is Prime (7): " + isPrime(7, 6));
         System.out.println("Factorial (5): " + factorial(5));
+        System.out.println("Fibonacci (5): " + fibonacci(5));
     }
 }
