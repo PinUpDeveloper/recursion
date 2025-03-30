@@ -100,6 +100,20 @@ public class Main {
         printReverse(arr, n - 1);
     }
 
+    /**
+     * This method checks if a string consists only of digits.
+     * Time complexity: O(n), where n is the length of the string.
+     *
+     * @param s The input string.
+     * @param index The current character index.
+     * @return true if all characters are digits, false otherwise.
+     */
+    public static boolean isAllDigits(String s, int index) {
+        if (index == s.length()) return true;
+        if (!Character.isDigit(s.charAt(index))) return false;
+        return isAllDigits(s, index + 1);
+    }
+
     public static void main(String[] args) {
         // Example calls for each function
         int[] arr = {10, 1, 32, 3, 45};
@@ -111,5 +125,6 @@ public class Main {
         System.out.println("Power (2^10): " + power(2, 10));
         System.out.print("Reverse Array: ");
         printReverse(new int[]{1, 4, 6, 2}, 4);
+        System.out.println("\nIs All Digits (123456): " + isAllDigits("123456", 0));
     }
 }
